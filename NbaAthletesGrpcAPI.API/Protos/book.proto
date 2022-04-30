@@ -1,0 +1,23 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "NbaAthletesGrpcAPI.API";
+
+package book;
+
+service Booker {
+  rpc SaveBook (BookCreateRequest) returns (BookReply);
+}
+
+message BookCreateRequest {
+  string title = 1;
+  string author = 2;
+  int32 pages = 3;
+}
+
+message BookReply {
+  string id = 1;
+  string title = 2;
+  string author = 3;
+  int32 pages = 4;
+  int64 date = 5;
+}
